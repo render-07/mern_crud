@@ -11,7 +11,7 @@ function App() {
                 <ul className="navbar-nav mr-auto">
                     <li className="navbar-item">
                         <Link to="/" className="nav-link">
-                            zxcxzcxzczxc
+                            Todos
                         </Link>
                     </li>
                     <li className="navbar-item">
