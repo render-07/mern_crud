@@ -6,11 +6,11 @@ export const TodoList = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        const fetchItems = async () => {
+        const fetchTodos = async () => {
             const todos = await getTodos();
             setItems(todos);
         };
-        fetchItems();
+        fetchTodos();
     }, []);
 
     return (
@@ -26,10 +26,10 @@ export const TodoList = () => {
                     </thead>
                     <tbody>
                         {items.map((todo) => (
-                            <tr key={todo.id}>
+                            <tr key={todo._id}>
                                 <td>{todo.text}</td>
                                 <td>
-                                    <Link to={`/edit/${todo.id}`}>Edit</Link>
+                                    <Link to={`/edit/${todo._id}`}>Edit</Link>
                                 </td>
                             </tr>
                         ))}

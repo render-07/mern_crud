@@ -32,7 +32,7 @@ app.post("/create", (req, res) => {
     });
 });
 
-app.get(":/id", (req, res) => {
+app.get("/edit/:id", (req, res) => {
   const id = req.params.id;
   Todo.findById(id, (error, todo) => {
     res.json(todo);

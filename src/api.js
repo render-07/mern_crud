@@ -8,3 +8,4 @@ export const createTodo = (todo) =>
         },
         body: JSON.stringify(todo)
     });
+export const getTodo = (id) => fetch(`http://localhost:5000/edit/${id}`).then((res) => res.json());
