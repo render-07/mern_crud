@@ -10,11 +10,15 @@ export const EditTodo = () => {
         });
     }, []);
 
+    const onSubmit = (data) => {
+        alert(JSON.stringify(data));
+    };
+
     return todo ? (
         <div className="container">
             <div className="mt-3">
                 <h3>Edit Todo Item</h3>
-                <TodoForm todo={todo}></TodoForm>
+                <TodoForm todo={todo} onSubmit={onSubmit}></TodoForm>
             </div>
         </div>
     ) : (
