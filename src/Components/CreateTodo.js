@@ -3,9 +3,8 @@ import { TodoForm } from './TodoForm';
 import { createTodo } from '../api';
 
 export const CreateTodo = () => {
-    const onSubmit = (data) => {
-        createTodo(data);
-        alert(JSON.stringify(data));
+    const onSubmit = async (data) => {
+        await createTodo(data);
     };
 
     return (

@@ -39,6 +39,25 @@ app.get("/edit/:id", (req, res) => {
   });
 });
 
+app.post("/edit/:id", (req, res) => {
+  const id = req.params.id;
+  Todo.findById(id, (error, todo) => {
+    if (!todo) {
+      res.status(404).send("Todo not found");
+    } else {
+      todo.text = req.body.text;
+      todo
+        .save()
+        .then((todo) => {
+          res.json(todo);
+        })
+        .catch((error) => {
+          res.status(500).send(error.message);
+        });
+    }
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`);
 });

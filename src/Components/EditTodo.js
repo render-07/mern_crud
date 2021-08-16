@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouteMatch } from 'react-router-dom';
-import { getTodo } from '../api';
+import { getTodo, updateTodo } from '../api';
 import { TodoForm } from './TodoForm';
 
 export const EditTodo = () => {
@@ -15,8 +15,8 @@ export const EditTodo = () => {
         fetchTodo();
     }, []);
 
-    const onSubmit = (data) => {
-        alert(JSON.stringify(data));
+    const onSubmit = async (data) => {
+        await updateTodo(data, match.params.id);
     };
 
     return todo ? (
