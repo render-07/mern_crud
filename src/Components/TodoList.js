@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getTodos } from '../api';
 
 export const TodoList = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        setItems([
-            {
-                text: 'fuck',
-                id: '0'
-            }
-        ]);
+        const fetchItems = async () => {
+            const todos = await getTodos();
+            setItems(todos);
+        };
+        fetchItems();
     }, []);
 
     return (
