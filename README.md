@@ -20,4 +20,4 @@ You will also see any lint errors in the console.
 
 To run the backend server. Also mind the connection string.
 
-## This is for educational purpose only.
+### This is for educational purpose only.
