@@ -22,6 +22,6 @@ You will also see any lint errors in the console.
 
 ### `node server.js`
 
-To run the backend server. Also mind the connection string.
+To run the backend server. Also mind the database connection string.
 
 ### This is for educational purpose only.
